@@ -8,7 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @Getter
 @Setter
-@ToString
 public class Jugador {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -26,7 +25,7 @@ public class Jugador {
 
     private String idioma;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     //@JoinColumn(name = "juego_preferido_id")
     private Juego juegoPreferido;
 
@@ -40,5 +39,24 @@ public class Jugador {
         this.email = email;
         this.idioma = idioma;
         this.pais = pais;
+    }
+
+    /**
+     * Pintamos todos los campos menos las relaciones, en este caso el Juego preferido
+     * @return
+     */
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Jugador{");
+        sb.append("id=").append(id);
+        sb.append(", nombre='").append(nombre).append('\'');
+        sb.append(", alias='").append(alias).append('\'');
+        sb.append(", edad=").append(edad);
+        sb.append(", email='").append(email).append('\'');
+        sb.append(", idioma='").append(idioma).append('\'');
+        sb.append(", pais='").append(pais).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

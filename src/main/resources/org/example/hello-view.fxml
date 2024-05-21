@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="690.0" prefWidth="960.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javafx.GamesControllers">
+    <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="0.0" prefWidth="546.0">
+        <menus>
+            <Menu mnemonicParsing="false" text="Juegos">
+                <items>
+                    <MenuItem fx:id="showGames" mnemonicParsing="false" text="Mostrar" />
+                    <MenuItem mnemonicParsing="false" text="Insertar" />
+                    <MenuItem mnemonicParsing="false" text="Actualizar" />
+                    <MenuItem mnemonicParsing="false" text="Eliminar" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Jugadores">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Mostrar" />
+                    <MenuItem mnemonicParsing="false" text="Insertar" />
+                    <MenuItem mnemonicParsing="false" text="Actualizar" />
+                    <MenuItem mnemonicParsing="false" text="Eliminar" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Partidas">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Mostrar" />
+                    <MenuItem mnemonicParsing="false" text="Insertar" />
+                    <MenuItem mnemonicParsing="false" text="Actualizar" />
+                    <MenuItem mnemonicParsing="false" text="Eliminar" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Estadisticas">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Action 1" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+
+    <TableView fx:id="gamesTable" editable="true" prefHeight="512.0" prefWidth="254.0">
+        <columns>
+            <TableColumn fx:id="gameName" text="Nombre" />
+            <TableColumn fx:id="gamePegi" text="Pegi" />
+            <TableColumn fx:id="gamePlatform" text="Plataforma" />
+            <TableColumn fx:id="gameCategory" text="Categoria" />
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+        <opaqueInsets>
+            <Insets />
+        </opaqueInsets>
+        <VBox.margin>
+            <Insets left="20.0" right="20.0" />
+        </VBox.margin>
+    </TableView>
+    <Pane prefHeight="200.0" prefWidth="200.0">
+        <children>
+            <ComboBox fx:id="gameCategoryCombo" layoutX="763.0" layoutY="22.0" prefWidth="150.0" />
+            <ComboBox fx:id="gamePlatformCombo" layoutX="548.0" layoutY="26.0" prefWidth="150.0" />
+            <TextField layoutX="55.0" layoutY="22.0" prefHeight="26.0" prefWidth="150.0">
+                <font>
+                    <Font size="17.0" />
+                </font>
+            </TextField>
+            <TextField layoutX="344.0" layoutY="23.0" prefHeight="26.0" prefWidth="69.0">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </TextField>
+        </children>
+    </Pane>
+</VBox>

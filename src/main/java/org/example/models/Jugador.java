@@ -26,7 +26,7 @@ public class Jugador {
     private String idioma;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    //@JoinColumn(name = "juego_preferido_id")
+    @JoinColumn(name = "juego_preferido_id")
     private Juego juegoPreferido;
 
     private String pais;

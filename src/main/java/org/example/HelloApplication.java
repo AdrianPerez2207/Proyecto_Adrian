@@ -1,9 +1,14 @@
-package org.example.javafx;
+package org.example;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.models.Categoria;
+import org.example.models.Juego;
+import org.example.models.Jugador;
+import org.example.repositories.JuegoRepositorio;
+import org.example.repositories.JugadorRepositorio;
 
 import java.io.IOException;
 
@@ -60,6 +65,16 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        JuegoRepositorio jrepositorio = new JuegoRepositorio();
+        Juego juego1 = new Juego("Call of Duty", "PS4", 18, Categoria.SHOOTER);
+        Juego juego2 = new Juego("Counter Strike", "PC", 18, Categoria.SHOOTER);
+        Juego juego3 = new Juego("hunt Showdown", "PC", 18, Categoria.TERROR);
+
+        //primero insertamos los juegos a JuegoRepositorio
+        jrepositorio.insert(juego1);
+        jrepositorio.insert(juego2);
+        jrepositorio.insert(juego3);
+
         launch();
     }
 }

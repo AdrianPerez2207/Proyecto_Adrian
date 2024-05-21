@@ -1,9 +1,6 @@
 package org.example.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.query.sql.internal.ParameterRecognizerImpl;
 
@@ -24,11 +21,13 @@ public class Juego {
 
     private Integer pegi; //Edad recomendada
 
-    //private Categoria categoria;
+    @Enumerated(value = EnumType.STRING)
+    private Categoria categoria;
 
-    public Juego(String nombre, String plataforma, Integer pegi) {
+    public Juego(String nombre, String plataforma, Integer pegi, Categoria categoria) {
         this.nombre = nombre;
         this.plataforma = plataforma;
         this.pegi = pegi;
+        this.categoria = categoria;
     }
 }
